@@ -49,6 +49,8 @@ AC_PROG_MKDIR_P
 AC_CONFIG_FILES([Makefile
                  $project_name.pc
                  doc/Makefile
+                 doc/at/Makefile
+                 doc/at/at32f4xx/Makefile
                  include/Makefile
                  res/Makefile
                  src/Makefile])

@@ -18,3 +18,8 @@
 #     last modified: 12/04 2021 16:13
 # ===============================================================
 
+if COMPILE_SELECT_MCU_AT
+_mcu = at
+endif
+
+SUBDIRS = $(_mcu)

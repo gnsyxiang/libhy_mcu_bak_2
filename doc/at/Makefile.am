@@ -1,0 +1,25 @@
+# ===============================================================
+# 
+# Release under GPLv-3.0.
+# 
+# @file    Makefile.am
+# @brief   
+# @author  gnsyxiang <gnsyxiang@163.com>
+# @date    05/11 2021 20:20
+# @version v0.0.1
+# 
+# @since    note
+# @note     note
+# 
+#     change log:
+#     NO.     Author              Date            Modified
+#     00      zhenquan.qiu        05/11 2021      create the file
+# 
+#     last modified: 05/11 2021 20:20
+# ===============================================================
+
+if COMPILE_SELECT_MCU_AT32F4XX
+_at_mcu = at32f4xx
+endif
+
+SUBDIRS = $(_at_mcu)
