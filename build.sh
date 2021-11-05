@@ -28,8 +28,6 @@ _cppflags_com="${_cppflags_com} -Wno-error=unused-function"
 _cppflags_com="${_cppflags_com} -pipe"
 _cppflags_com="${_cppflags_com} -ffunction-sections"
 _cppflags_com="${_cppflags_com} -fdata-sections"
-_cppflags_com="${_cppflags_com} -fstack-protector-all"
-_ldflag_com="${_ldflag_com} -rdynamic"
 _ldflag_com="${_ldflag_com} -Wl,--gc-sections"
 _ldflag_com="${_ldflag_com} -Wl,--as-needed"
 
@@ -39,8 +37,18 @@ if [ x$1 = x"mcu" ]; then
     gcc_version=gcc-arm-none-eabi-5_4-2016q3
     gcc_prefix=arm-none-eabi
     cross_gcc_path=${data_disk_path}/opt/toolchains/${vender}/${gcc_version}/bin/${gcc_prefix}-
-
     _ldflag_com="${_ldflag_com} -specs=nano.specs -specs=nosys.specs"
+
+    # -----------
+    # 雅特力
+    # -----------
+    #
+    # M4系列
+    #
+    _cppflags_com="${_cppflags_com} -DAT32F407VGT7 -DAT_START_F407_V1_0 -DUSE_STDPERIPH_DRIVER -DSYSCLK_FREQ_240MHz=240000000"
+    _cppflags_com="${_cppflags_com} -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard"
+
+    _param_com="${_param_com} --with-mcu=at32f4xx"
 else
     help_info
 fi
