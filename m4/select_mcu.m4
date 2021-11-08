@@ -35,7 +35,7 @@ AC_DEFUN([SELECT_MCU],
             at32f4xx)
                 AC_DEFINE(HAVE_SELECT_MCU_AT32F4XX,  1, [select mcu at32f4xx])
                 mcu_vender="at"
-                AT32F4XX_DRIVER="AT32F4xx_StdPeriph_Lib_V1.3.1"
+                AT32F4XX_DRIVER="AT32F4xx_StdPeriph_Lib_V1.3.2"
                 AC_SUBST(AT32F4XX_DRIVER)
             ;;
             hc32l13x)

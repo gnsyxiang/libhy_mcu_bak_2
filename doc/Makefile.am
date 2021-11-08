@@ -22,4 +22,8 @@ if COMPILE_SELECT_MCU_AT
 _mcu = at
 endif
 
+if COMPILE_SELECT_MCU_HC
+_mcu = hc
+endif
+
 SUBDIRS = $(_mcu)

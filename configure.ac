@@ -36,22 +36,50 @@ AC_PROG_INSTALL
 AC_PROG_LN_S
 AC_PROG_MAKE_SET
 # AC_PROG_RANLIB
+
+AM_PROG_AS
 AC_PROG_MKDIR_P
 
 # Checks for libraries.
 
 # Checks for header files.
+AC_CHECK_HEADERS([stdint.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_INT16_T
+AC_TYPE_INT32_T
+AC_TYPE_INT64_T
+AC_TYPE_INT8_T
+AC_TYPE_UINT16_T
+AC_TYPE_UINT32_T
+AC_TYPE_UINT64_T
+AC_TYPE_UINT8_T
 
 # Checks for library functions.
+AC_CHECK_FUNCS([memset])
 
 AC_CONFIG_FILES([Makefile
                  $project_name.pc
                  doc/Makefile
                  doc/at/Makefile
                  doc/at/at32f4xx/Makefile
+                 doc/hc/Makefile
                  include/Makefile
                  res/Makefile
-                 src/Makefile])
+                 src/Makefile
+                 src/at/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/inc/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/src/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/CoreSupport/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/gcc/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/gcc/linker/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/Makefile
+                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Makefile
+                 src/at/at32f4xx/Makefile
+                 src/hc/Makefile])
 AC_OUTPUT
