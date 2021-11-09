@@ -65,6 +65,9 @@ AC_CONFIG_FILES([Makefile
                  doc/at/at32f4xx/Makefile
                  doc/hc/Makefile
                  include/Makefile
+                 keil_project/Makefile
+                 keil_project/at/Makefile
+                 keil_project/hc/Makefile
                  res/Makefile
                  src/Makefile
                  src/at/Makefile
