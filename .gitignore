@@ -77,12 +77,14 @@ stamp-h1
 _build/
 install/
 doxygen/
+keil_project/at/Listings/
+keil_project/at/Objects/
 
 *.o
 *.lo
 *.la
+keil_project/at/at32f4xx.uvguix.*
 
 hy_mcu.pc
 example/main
-
 
