@@ -49,7 +49,7 @@ _include_com    += \
                    -I$(_at32f4xx_lib)/CMSIS/CM4/DeviceSupport       \
                    -I$(_at32f4xx_lib)/AT32F4xx_StdPeriph_Driver/inc
 
-_sources_com    += startup_at32f403argt7.s
+_sources_com    += startup_at32f407vgt7.s
 
 _cppflags_com   += $(_no_error_com) $(_include_com) $(_define_com)
 
