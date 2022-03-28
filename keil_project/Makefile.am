@@ -18,12 +18,5 @@
 #     last modified: 09/11 2021 18:34
 # ===============================================================
 
-if COMPILE_SELECT_MCU_AT
-_mcu_vender = at
-endif
+SUBDIRS = $(vender)
 
-if COMPILE_SELECT_MCU_HC
-_mcu_vender = hc
-endif
-
-SUBDIRS = $(_mcu_vender)

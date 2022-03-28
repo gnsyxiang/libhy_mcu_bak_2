@@ -5,7 +5,7 @@
 # @file    Makefile.am
 # @brief   
 # @author  gnsyxiang <gnsyxiang@163.com>
-# @date    05/11 2021 20:29
+# @date    08/11 2021 08:09
 # @version v0.0.1
 # 
 # @since    note
@@ -13,14 +13,14 @@
 # 
 #     change log:
 #     NO.     Author              Date            Modified
-#     00      zhenquan.qiu        05/11 2021      create the file
+#     00      zhenquan.qiu        08/11 2021      create the file
 # 
-#     last modified: 05/11 2021 20:29
+#     last modified: 08/11 2021 08:09
 # ===============================================================
 
-SUBDIRS = $(AT32F4XX_DRIVER)
+SUBDIRS = Libraries
 
-noinst_LTLIBRARIES = libmcu.la
+noinst_LTLIBRARIES = libmcu_driver.la
 
 # ------------------
 # defining variables
@@ -34,6 +34,8 @@ _cflags_com     =
 _cxxflags_com   =
 _ldflags_com    =
 _ldadd_com      =
+
+_at32f4xx_lib   = $(top_builddir)/src/$(vender)/$(chip)/$(driver)/Libraries
 
 # ---------------------
 # add necessary content
@@ -54,11 +56,15 @@ _cxxflags_com   +=
 
 _ldflags_com    +=
 
-_ldadd_com      += $(top_builddir)/src/at/at32f4xx/$(AT32F4XX_DRIVER)/libmcu_driver.la
+_ldadd_com      += \
+                   $(_at32f4xx_lib)/AT32F4xx_StdPeriph_Driver/src/libdriver.la \
+                   $(_at32f4xx_lib)/CMSIS/CM4/DeviceSupport/libDeviceSupport.la \
+                   $(_at32f4xx_lib)/CMSIS/CM4/DeviceSupport/startup/gcc/libstartup.la
 
-libmcu_la_SOURCES    = $(_sources_com)
-libmcu_la_CPPFLAGS   = $(_cppflags_com)
-libmcu_la_CFLAGS     = $(_cflags_com)
-libmcu_la_CXXFLAGS   = $(_cxxflags_com)
-libmcu_la_LDFLAGS    = $(_ldflags_com)
-libmcu_la_LIBADD     = $(_ldadd_com)
+libmcu_driver_la_SOURCES  = $(_sources_com)
+libmcu_driver_la_CPPFLAGS = $(_cppflags_com)
+libmcu_driver_la_CFLAGS   = $(_cflags_com)
+libmcu_driver_la_CXXFLAGS = $(_cxxflags_com)
+libmcu_driver_la_LDFLAGS  = $(_ldflags_com)
+libmcu_driver_la_LIBADD   = $(_ldadd_com)
+

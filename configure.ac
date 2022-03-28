@@ -25,7 +25,10 @@ CHECK_VERSION_INFO
 CHECK_DOXYGEN
 # CHECK_JAVA
 
-SELECT_MCU
+SELECT_VENDER
+SELECT_CHIP
+SELECT_PRODUCT
+SELECT_LANGUAGE
 
 # Checks for programs.
 AC_PROG_CXX
@@ -60,29 +63,33 @@ AC_CHECK_FUNCS([memset])
 
 AC_CONFIG_FILES([Makefile
                  $project_name.pc
+                 build-script/Makefile
+                 build-script/arterytek/Makefile
+                 build-script/arterytek/at32f4xx/Makefile
                  doc/Makefile
-                 doc/at/Makefile
-                 doc/at/at32f4xx/Makefile
-                 doc/hc/Makefile
+                 doc/arterytek/Makefile
+                 doc/arterytek/at32f4xx/Makefile
+                 doc/hdhc/Makefile
                  include/Makefile
                  keil_project/Makefile
-                 keil_project/at/Makefile
-                 keil_project/hc/Makefile
+                 keil_project/arterytek/Makefile
+                 keil_project/hdhc/Makefile
                  res/Makefile
                  src/Makefile
-                 src/at/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/inc/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/src/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/CoreSupport/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/gcc/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/gcc/linker/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/Makefile
-                 src/at/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Makefile
-                 src/at/at32f4xx/Makefile
-                 src/hc/Makefile])
+                 src/arterytek/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/inc/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/AT32F4xx_StdPeriph_Driver/src/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/CoreSupport/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/gcc/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/DeviceSupport/startup/gcc/linker/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/CM4/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/CMSIS/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Libraries/Makefile
+                 src/arterytek/at32f4xx/AT32F4xx_StdPeriph_Lib_V1.3.2/Makefile
+                 src/arterytek/at32f4xx/Makefile
+                 src/hdhc/Makefile
+                 ]) # for make dist
 AC_OUTPUT

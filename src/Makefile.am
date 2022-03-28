@@ -18,15 +18,7 @@
 #     last modified: 05/03 2021 10:35
 # ===============================================================
 
-if COMPILE_SELECT_MCU_AT
-_mcu_vender = at
-endif
-
-if COMPILE_SELECT_MCU_HC
-_mcu_vender = hc
-endif
-
-SUBDIRS = $(_mcu_vender)
+SUBDIRS = $(vender)
 
 lib_LTLIBRARIES = lib@project_name@.la
 
@@ -64,7 +56,7 @@ _ldflags_com    += \
                    -export-symbols-regex 'Hy*'                  \
                    -version-info @current@:@revision@:@age@
 
-_ldadd_com      += $(top_builddir)/src/$(_mcu_vender)/libmcu_vender.la
+_ldadd_com      += $(top_builddir)/src/$(vender)/libmcu_vender.la
 
 lib@project_name@_la_SOURCES    = $(_sources_com)
 lib@project_name@_la_CPPFLAGS   = $(_cppflags_com)

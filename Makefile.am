@@ -21,10 +21,11 @@
 include res/doxygen.am
 
 SUBDIRS = \
-          include   \
-          src       \
-          doc       \
-          res
+          include       \
+          src           \
+          doc           \
+          res           \
+          build-script
 
 # ------------------
 # defining variables

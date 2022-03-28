@@ -29,7 +29,7 @@ EXTRA_DIST      =
 # ------------------
 # make install files
 # ------------------
-if COMPILE_SELECT_MCU_AT32F4XX
+if COMPILE_SELECT_CHIP_AT32F4XX
 res_DATA        += AT32F407xG_FLASH.ld
 endif
 
@@ -37,7 +37,7 @@ endif
 # ---------------
 # make dist files
 # ---------------
-if COMPILE_SELECT_MCU_AT32F4XX
+if COMPILE_SELECT_CHIP_AT32F4XX
 _dist_file_com  += AT32F407xG_FLASH.ld
 endif
 

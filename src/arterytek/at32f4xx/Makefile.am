@@ -5,7 +5,7 @@
 # @file    Makefile.am
 # @brief   
 # @author  gnsyxiang <gnsyxiang@163.com>
-# @date    05/11 2021 20:28
+# @date    05/11 2021 20:29
 # @version v0.0.1
 # 
 # @since    note
@@ -15,16 +15,12 @@
 #     NO.     Author              Date            Modified
 #     00      zhenquan.qiu        05/11 2021      create the file
 # 
-#     last modified: 05/11 2021 20:28
+#     last modified: 05/11 2021 20:29
 # ===============================================================
 
-if COMPILE_SELECT_MCU_AT32F4XX
-_mcu_type = at32f4xx
-endif
+SUBDIRS = $(driver)
 
-SUBDIRS = $(_mcu_type)
-
-noinst_LTLIBRARIES = libmcu_vender.la
+noinst_LTLIBRARIES = libmcu.la
 
 # ------------------
 # defining variables
@@ -58,11 +54,12 @@ _cxxflags_com   +=
 
 _ldflags_com    +=
 
-_ldadd_com      += $(top_builddir)/src/at/$(_mcu_type)/libmcu.la
+_ldadd_com      += $(top_builddir)/src/$(vender)/$(chip)/$(driver)/libmcu_driver.la
 
-libmcu_vender_la_SOURCES  = $(_sources_com)
-libmcu_vender_la_CPPFLAGS = $(_cppflags_com)
-libmcu_vender_la_CFLAGS   = $(_cflags_com)
-libmcu_vender_la_CXXFLAGS = $(_cxxflags_com)
-libmcu_vender_la_LDFLAGS  = $(_ldflags_com)
-libmcu_vender_la_LIBADD   = $(_ldadd_com)
+libmcu_la_SOURCES    = $(_sources_com)
+libmcu_la_CPPFLAGS   = $(_cppflags_com)
+libmcu_la_CFLAGS     = $(_cflags_com)
+libmcu_la_CXXFLAGS   = $(_cxxflags_com)
+libmcu_la_LDFLAGS    = $(_ldflags_com)
+libmcu_la_LIBADD     = $(_ldadd_com)
+
