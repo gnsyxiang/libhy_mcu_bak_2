@@ -27,7 +27,7 @@ noinst_LTLIBRARIES = libmcu_driver.la
 # ------------------
 _no_error_com   =
 _define_com     =
-_include_com    =
+_include_com    = $(include_com)
 _sources_com    =
 _cppflags_com   =
 _cflags_com     =
@@ -59,7 +59,8 @@ _ldflags_com    +=
 _ldadd_com      += \
                    $(_at32f4xx_lib)/AT32F4xx_StdPeriph_Driver/src/libdriver.la \
                    $(_at32f4xx_lib)/CMSIS/CM4/DeviceSupport/libDeviceSupport.la \
-                   $(_at32f4xx_lib)/CMSIS/CM4/DeviceSupport/startup/gcc/libstartup.la
+                   $(_at32f4xx_lib)/CMSIS/CM4/DeviceSupport/startup/gcc/libstartup.la \
+                   $(ldadd_com)
 
 libmcu_driver_la_SOURCES  = $(_sources_com)
 libmcu_driver_la_CPPFLAGS = $(_cppflags_com)

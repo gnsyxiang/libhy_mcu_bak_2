@@ -32,9 +32,16 @@ SUBDIRS = \
 # ------------------
 _install_files_com  =
 _dist_files_com     =
+include_com         =
+ldadd_com           =
 
 ACLOCAL_AMFLAGS     = -I m4
 pkgconfigdir        = $(libdir)/pkgconfig
+
+include_com         += $(ACLOCAL_AMFLAGS)
+
+export include_com
+export ldadd_com 
 
 # ---------------------
 # add necessary content

@@ -27,7 +27,7 @@ noinst_LTLIBRARIES = libmcu.la
 # ------------------
 _no_error_com   =
 _define_com     =
-_include_com    =
+_include_com    = $(include_com)
 _sources_com    =
 _cppflags_com   =
 _cflags_com     =
@@ -54,7 +54,9 @@ _cxxflags_com   +=
 
 _ldflags_com    +=
 
-_ldadd_com      += $(top_builddir)/src/$(vender)/$(chip)/$(driver)/libmcu_driver.la
+_ldadd_com      += \
+                   $(top_builddir)/src/$(vender)/$(chip)/$(driver)/libmcu_driver.la \
+                   $(ldadd_com)
 
 libmcu_la_SOURCES    = $(_sources_com)
 libmcu_la_CPPFLAGS   = $(_cppflags_com)

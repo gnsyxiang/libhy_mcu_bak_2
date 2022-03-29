@@ -27,7 +27,7 @@ lib_LTLIBRARIES = lib@project_name@.la
 # ------------------
 _no_error_com   =
 _define_com     =
-_include_com    =
+_include_com    = $(include_com)
 _sources_com    =
 _cppflags_com   =
 _cflags_com     =
@@ -56,7 +56,9 @@ _ldflags_com    += \
                    -export-symbols-regex 'Hy*'                  \
                    -version-info @current@:@revision@:@age@
 
-_ldadd_com      += $(top_builddir)/src/$(vender)/libmcu_vender.la
+_ldadd_com      += \
+                   $(top_builddir)/src/$(vender)/libmcu_vender.la \
+                   $(ldadd_com)
 
 lib@project_name@_la_SOURCES    = $(_sources_com)
 lib@project_name@_la_CPPFLAGS   = $(_cppflags_com)

@@ -28,7 +28,7 @@ noinst_LTLIBRARIES = libstartup.la
 _no_error_com   =
 _define_com     =
 _include_com    =
-_sources_com    =
+_sources_com    = $(include_com)
 _cppflags_com   =
 _cflags_com     =
 _cxxflags_com   =
@@ -59,7 +59,7 @@ _cxxflags_com   +=
 
 _ldflags_com    +=
 
-_ldadd_com      +=
+_ldadd_com      += $(ldadd_com)
 
 libstartup_la_SOURCES   = $(_sources_com)
 libstartup_la_CPPFLAGS  = $(_cppflags_com)
@@ -68,3 +68,4 @@ libstartup_la_CFLAGS    = $(_cflags_com)
 libstartup_la_CXXFLAGS  = $(_cxxflags_com)
 libstartup_la_LDFLAGS   = $(_ldflags_com)
 libstartup_la_LIBADD    = $(_ldadd_com)
+
