@@ -25,11 +25,6 @@ CHECK_VERSION_INFO
 CHECK_DOXYGEN
 # CHECK_JAVA
 
-SELECT_VENDER
-SELECT_CHIP
-SELECT_PRODUCT
-SELECT_LANGUAGE
-
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_AWK
@@ -42,6 +37,27 @@ AC_PROG_MAKE_SET
 
 AM_PROG_AS
 AC_PROG_MKDIR_P
+
+SELECT_VENDER
+SELECT_CHIP
+SELECT_PRODUCT
+SELECT_LANGUAGE
+
+PKG_PROG_PKG_CONFIG
+if test -n "$PKG_CONFIG"; then
+    # Horrible hack for systems where the pkg-config install directory is simply wrong!
+    if $PKG_CONFIG --variable=pc_path pkg-config 2>/dev/null | grep -q /lib/; then
+        PKG_INSTALLDIR(['${prefix}/lib/pkgconfig'])
+    else
+        PKG_INSTALLDIR
+    fi
+fi
+
+AC_ARG_ENABLE([debug_info],
+              [AS_HELP_STRING([--enable-debug_info], [enable support for output debug info])],
+              [], [enable_debug_info=no])
+AM_CONDITIONAL(COMPILE_DEBUG_INFO, [test "$enable_debug_info" = "yes"])
+
 
 # Checks for libraries.
 

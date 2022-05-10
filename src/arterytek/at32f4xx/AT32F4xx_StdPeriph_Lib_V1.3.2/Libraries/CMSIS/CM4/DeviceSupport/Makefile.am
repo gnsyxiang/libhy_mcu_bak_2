@@ -40,7 +40,7 @@ _install_headers_com    =
 
 install_includedir      = $(includedir)/@project_name@
 
-_at32f4xx_lib   = $(top_srcdir)/src/at/at32f4xx/$(AT32F4XX_DRIVER)/Libraries
+_at32f4xx_lib   = $(top_srcdir)/src/arterytek/at32f4xx/$(driver)/Libraries
 
 # ---------------------
 # add necessary content
