@@ -161,6 +161,7 @@ get_com_config()
     cppflag="${cppflag} -Wno-error=unused-but-set-variable"
     cppflag="${cppflag} -Wno-error=unused-variable"
     cppflag="${cppflag} -Wno-error=unused-function"
+    cppflag="${cppflag} -Wno-error=maybe-uninitialized"
     cppflag="${cppflag} -pipe"
     cppflag="${cppflag} -ffunction-sections"
     cppflag="${cppflag} -fdata-sections"
